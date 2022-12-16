@@ -12,6 +12,6 @@ function createEmployeeRecord([firstName,familyName,title,payPerHour,timeInEvent
    return employee;
 }
 
-function createEmployeeRecords(twoRows){
-    return twoRows.map(createEmployeeRecord)
+function createEmployeeRecords(Rows){
+    return Rows.map(createEmployeeRecord)
 }
