@@ -56,4 +56,10 @@ for (let punch of arrayOfTimePunches)
         const sumOfTime = arrayOfTimes.reduce(decrement);
         return sumOfTime;
    }
+
+   
+   const sumOfTimeIns =timeCards(employeeRecord.timeInEvents, date)
+   const sumOfTimeOuts = timeCards(employeeRecord.timeOutEvents, date)
+   const hoursWorked = sumOfTimeOuts - sumOfTimeIns;
+   return (hoursWorked)/100;
 }
