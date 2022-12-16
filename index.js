@@ -67,3 +67,7 @@ for (let punch of arrayOfTimePunches)
 const wagesEarnedOnDate = (employeeRecord, date ="all") => {
     return employeeRecord.payPerHour * hoursWorkedOnDate(employeeRecord, date);
 }
+
+function allWagesFor(employeeRecord){
+    return wagesEarnedOnDate(employeeRecord)
+}
