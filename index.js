@@ -71,3 +71,11 @@ const wagesEarnedOnDate = (employeeRecord, date ="all") => {
 function allWagesFor(employeeRecord){
     return wagesEarnedOnDate(employeeRecord)
 }
+
+function calculatePayroll(arrayOfEmployeeRecords){
+    let grandTotalOwed = 0;
+    for (let currentEmply of arrayOfEmployeeRecords){
+        grandTotalOwed += allWagesFor(currentEmply)
+    }
+    return grandTotalOwed;
+}
