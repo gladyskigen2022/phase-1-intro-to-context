@@ -63,3 +63,7 @@ for (let punch of arrayOfTimePunches)
    const hoursWorked = sumOfTimeOuts - sumOfTimeIns;
    return (hoursWorked)/100;
 }
+
+const wagesEarnedOnDate = (employeeRecord, date ="all") => {
+    return employeeRecord.payPerHour * hoursWorkedOnDate(employeeRecord, date);
+}
