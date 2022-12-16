@@ -15,3 +15,16 @@ function createEmployeeRecord([firstName,familyName,title,payPerHour,timeInEvent
 function createEmployeeRecords(Rows){
     return Rows.map(createEmployeeRecord)
 }
+
+function createTimeInEvent (employeeRecord, dateStamp){
+    const date = dateStamp.split(" ")[0];
+    const time = dateStamp.split(" ")[1];
+    const checkIn = {
+        type: "timeIn",
+        hour: parseInt(time),
+        date: date
+    }
+    employeeRecord.timeInEvents.push(checkIn);
+    return employeeRecord;
+
+}
