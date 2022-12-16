@@ -16,7 +16,7 @@ function createEmployeeRecords(Rows){
     return Rows.map(createEmployeeRecord)
 }
 
-function createTimeInEvent (employeeRecord, dateStamp){
+function createTimeInEvent(employeeRecord, dateStamp){
     const date = dateStamp.split(" ")[0];
     const time = dateStamp.split(" ")[1];
     const checkIn = {
@@ -25,6 +25,18 @@ function createTimeInEvent (employeeRecord, dateStamp){
         date: date
     }
     employeeRecord.timeInEvents.push(checkIn);
+    return employeeRecord;
+
+}
+function createTimeOutEvent(employeeRecord, dateStamp){
+    const date = dateStamp.split(" ")[0];
+    const time = dateStamp.split(" ")[1];
+    const checkOut = {
+        type: "timeOut",
+        hour: parseInt(time),
+        date: date
+    }
+    employeeRecord.timeOutEvents.push(checkOut);
     return employeeRecord;
 
 }
