@@ -20,7 +20,7 @@ function createTimeInEvent(employeeRecord, dateStamp){
     const date = dateStamp.split(" ")[0];
     const time = dateStamp.split(" ")[1];
     const checkIn = {
-        type: "timeIn",
+        type: "TimeIn",
         hour: parseInt(time),
         date: date
     }
@@ -32,11 +32,28 @@ function createTimeOutEvent(employeeRecord, dateStamp){
     const date = dateStamp.split(" ")[0];
     const time = dateStamp.split(" ")[1];
     const checkOut = {
-        type: "timeOut",
+        type: "TimeOut",
         hour: parseInt(time),
         date: date
     }
     employeeRecord.timeOutEvents.push(checkOut);
     return employeeRecord;
 
+}
+
+const hoursWorkedOnDate= (employeeRecord, date ="all") =>{
+    function timeCards(arrayOfTimePunches,date){
+const arrayOfTimes =[];
+const decrement =(previousVal,currentVal) => previousVal + currentVal;
+
+for (let punch of arrayOfTimePunches)
+        if (date = "all"){
+            arrayOfTimes.push(punch.hour)
+        }
+        else {
+           ( punch.date ===date? arrayOfTimes.push(punch.hour) : null);
+        }
+        const sumOfTime = arrayOfTimes.reduce(decrement);
+        return sumOfTime;
+   }
 }
